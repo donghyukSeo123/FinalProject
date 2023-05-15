@@ -1,0 +1,45 @@
+package kr.or.ddit.service;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import kr.or.ddit.ServiceResult;
+
+import kr.or.ddit.vo.AnnoVO;
+import kr.or.ddit.vo.BoardVO;
+import kr.or.ddit.vo.MemberVO;
+import kr.or.ddit.vo.ReviewVO;
+import kr.or.ddit.vo.CompanyVO;
+
+public interface ICompanyService {
+
+	void insertAnno(HttpServletRequest req, AnnoVO anno)throws Exception;
+
+	List<AnnoVO> selectAnno(int comId);
+
+	ServiceResult deleteAnno(int annoId);
+
+	AnnoVO selectAnnoOne(int annoId);
+
+	ServiceResult updateAnno(HttpServletRequest req,AnnoVO annoVO)throws Exception;
+
+	List<MemberVO> selectMember();
+
+
+	void insertCompany(CompanyVO vo, HttpServletRequest req) throws Exception;
+
+//	List<AnnoKeywordVO> selectAnnoKeyword();
+
+	CompanyVO getCompany(String companyId);
+
+	List<MemberVO> selectinterMember(int comId);
+
+	List<MemberVO> selectApplymem(int comId);
+
+	void insertReview(ReviewVO vo);
+
+	List<ReviewVO> getReview(int parseInt);
+	List<BoardVO> noticeList();
+
+}

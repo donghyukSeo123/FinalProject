@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.CompanyMapper">
+
+<insert id="insertCompany" parameterType="companyVO">
+
+	<selectKey keyProperty="companyId" resultType="int" order="BEFORE">
+		select seq_comId.nextval from dual
+	</selectKey>
+
+insert into company (
+	company_id, company_number, company_name, company_representative, company_business, company_zip,
+	company_phone, company_email, company_establishment, company_small, company_employees, company_average,
+	company_person, company_main, company_check, company_intro, company_addr2, 
+	company_cap, company_take, company_profit, company_income, company_addr1
+
+) values (
+	#{companyId},#{companyNumber},#{companyName},#{companyRepresentative},#{companyBusiness},#{companyZip},
+	#{companyPhone},#{companyEmail},#{companyEstablishment},#{companySmall},#{companyEmployees},#{companyAverage},
+	#{companyPerson},#{companyMain},1,#{companyIntro},#{companyAddr2},
+	#{companyCap},#{companyTake},#{companyProfit},#{companyIntro},#{companyAddr1}
+)
+
+
+
+</insert>
+
+<update id="insertFile" parameterType="companyVO">
+
+update company set  
+company_logo = #{companyLogo}
+where 
+company_id = #{companyId}
+
+</update>
+
+</mapper>

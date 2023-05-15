@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<link href="${pageContext.request.contextPath }/resources/assets/css/pages/notifications.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath }/resources/assets/css/forms/switch-theme.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath }/resources/assets/css/ui-elements/pagination.css" rel="stylesheet" type="text/css">
+
+<div class="sub-header-container">
+    <header class="header navbar navbar-expand-sm">
+        <ul class="navbar-nav flex-row">
+            <li>
+                <div class="page-header">
+                    <nav class="breadcrumb-one" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page"><span>실시간 알림</span></li>
+                        </ol>
+                    </nav>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav d-flex align-center ml-auto right-side-filter">
+            <li class="">
+                <p class="current-time" id="currentTime"></p>
+                <p class="current-date" id="currentDate"></p>
+            </li>
+        </ul>
+    </header>
+</div>

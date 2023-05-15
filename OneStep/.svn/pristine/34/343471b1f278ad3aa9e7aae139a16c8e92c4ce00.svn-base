@@ -1,0 +1,502 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  <div class="sub-header-container">
+            <header class="header navbar navbar-expand-sm">
+                <ul class="navbar-nav flex-row">
+                    <li>
+                        <div class="page-header">
+                            <nav class="breadcrumb-one" aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Forms</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><span>Details</span></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-flex align-center ml-auto right-side-filter">
+                    <li class="">
+                        <p class="current-time" id="currentTime"></p>
+                        <p class="current-date" id="currentDate"></p>
+                    </li>
+                </ul>
+            </header>
+        </div>
+ 
+  <div class="layout-px-spacing">                
+                <div class="row layout-spacing layout-top-spacing" id="cancel-row">
+                    <div class="col-lg-12">
+                        <div class="">
+                            <div class="widget-content searchable-container grid">
+                                <!-- Tab Starts -->
+                                <div class="card-box">
+                                    <div class="w-100 animated-underline-content">
+                                        <ul class="nav nav-tabs  mb-3" id="lineTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="underline-about-tab" data-toggle="tab" href="#underline-about" role="tab" aria-controls="underline-about" aria-selected="true">About</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="underline-project-tab" data-toggle="tab" href="#underline-project" role="tab" aria-controls="underline-project" aria-selected="false">Projects</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="underline-team-tab" data-toggle="tab" href="#underline-team" role="tab" aria-controls="underline-team" aria-selected="false">Team</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="lineTabContent-3">
+                                            <div class="tab-pane fade show active" id="underline-about" role="tabpanel" aria-labelledby="underline-about-tab">
+                                                <div class="d-flex flex-wrap">
+                                                    <div class="col-xl-3 col-lg-4 col-md-4">
+                                                        <div class="contact-info mb-4">
+                                                            <p><a href="#"><i class="las la-globe"></i>www.domainname.com</a></p>
+                                                            <p><a href="#"><i class="lar la-envelope"></i>info@mail.com</a></p>
+                                                            <p><a href="#"><i class="las la-phone"></i>(+1) 458 5857 578</a></p>
+                                                        </div>
+                                                        <div class="contact-info mb-4">
+                                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10746.967560723306!2d-119.86682531362423!3d36.79233081031697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sin!4v1593079394959!5m2!1sen!2sin" width="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-4 col-md-4">
+                                                        <div class="contact-info mb-4">
+                                                            <p class="strong">About</p>
+                                                            <p class="font-12">Cube House is an American multinational technology conglomerate headquartered in California. It was popularised in the 1960s with the release of Letraset sheets containing more recently with desktop publishing software like Aldus PageMaker.Cube House is an American multinational technology conglomerate headquartered in California. It was popularised in the 1960s with the release of Letraset sheets containing more recently with desktop publishing software like Aldus PageMaker.</p>
+                                                            <hr>
+                                                            <p class="strong">Skills</p>
+                                                            <div class="d-flex flex-wrap align-items-center skills-container">
+                                                                <span>.Net</span>
+                                                                <span>Java</span>
+                                                                <span>Node JS</span>
+                                                                <span>Javascript</span>
+                                                                <span>Angular JS</span>
+                                                                <span>PHP</span>
+                                                                <span>Laravel</span>
+                                                                <span>AWS Server</span>
+                                                                <span>Cake PHP</span>
+                                                                <span>Ionic</span>
+                                                                <span>React</span>
+                                                                <span>Vue</span>
+                                                                <span>Flutter</span>
+                                                            </div>
+                                                            <hr>
+                                                            <p class="strong">Language Preferred</p>
+                                                            <div class="d-flex flex-wrap align-items-center language-container">
+                                                                <a class="d-flex mr-3">
+                                                                    <img src="assets/img/flag/usa-flag.png" class="flag-width" alt="flag"> 
+                                                                    <span class="align-self-center">&nbsp;English</span>
+                                                                </a>
+                                                                <a class="d-flex mr-3">
+                                                                    <img src="assets/img/flag/spain-flag.png" class="flag-width" alt="flag"> 
+                                                                    <span class="align-self-center">&nbsp;Spanish</span>
+                                                                </a>
+                                                                <a class="d-flex">
+                                                                    <img src="assets/img/flag/france-flag.png" class="flag-width" alt="flag"> 
+                                                                    <span class="align-self-center">&nbsp;French</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-4 col-md-4">
+                                                        <div class="contact-info mb-4">
+                                                            <div class="right-big-banner">
+                                                                <img src="assets/img/company-8.jpg" class="img" alt="logo"> 
+                                                                <p class="project-name">Track Ongoing Project</p>
+                                                                <p class="project-date">Started on 19 July 2020</p>
+                                                                <button class="btn btn-sm btn-primary mb-2">
+                                                                    Details
+                                                                </button>
+                                                                <p class="text-center font-11"><a class="text-primary" href="">Learn More</a></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="contact-info mb-2">
+                                                            <div class="right-big-banner">
+                                                                <img src="assets/img/company-5.jpg" class="img" alt="logo"> 
+                                                                <p class="project-name">Track Ongoing Project</p>
+                                                                <p class="project-date">Started on 08 August 2020</p>
+                                                                <button class="btn btn-sm btn-primary mb-2">
+                                                                    Details
+                                                                </button>
+                                                                <p class="text-center font-11"><a class="text-primary" href="">Learn More</a></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>         
+                                            </div>
+                                            <!-- Projects -->
+                                            <div class="tab-pane fade" id="underline-project" role="tabpanel" aria-labelledby="underline-project-tab">
+                                                <div class="row w-100 m-0">
+                                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-4">
+                                                        <div class="card single-project">
+                                                            <img src="assets/img/company-7.jpg" class="card-img-top" alt="widget-card-2">
+                                                            <div class="card-body">
+                                                                <p class="meta-date">25 Sep 2019</p>
+                                                                <h5 class="card-title">Hightech Software</h5>
+                                                                <p class="card-text">Node JS, Angular, AWS, Cloudinary Platform</p>
+                                                                <div class="team">
+                                                                    <img src="assets/img/profile-1.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-2.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-3.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-4.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                </div>
+                                                                <div class="meta-info">
+                                                                    <div class="meta-action">
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Completed :</span> <span>31%</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Team Size :</span><span>40</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Deadline :</span><span>31 Sep 2020</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-4">
+                                                        <div class="card single-project">
+                                                            <img src="assets/img/company-8.jpg" class="card-img-top" alt="widget-card-2">
+                                                            <div class="card-body">
+                                                                <p class="meta-date">12 June 2019</p>
+                                                                <h5 class="card-title">Vision Website</h5>
+                                                                <p class="card-text">Java, HTML, CSS, AWS, Cloudinary Platform</p>
+                                                                <div class="team">
+                                                                    <img src="assets/img/profile-7.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-8.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-9.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-10.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                </div>
+                                                                <div class="meta-info">
+                                                                    <div class="meta-action">
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Completed :</span> <span>51%</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Team Size :</span><span>4</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Deadline :</span><span>31 Dec 2020</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-4">
+                                                        <div class="card single-project">
+                                                            <img src="assets/img/company-3.jpg" class="card-img-top" alt="widget-card-2">
+                                                            <div class="card-body">
+                                                                <p class="meta-date">25 Sep 2019</p>
+                                                                <h5 class="card-title">Innovation</h5>
+                                                                <p class="card-text">.Net, Java, Node JS, Javascript, Angular JS</p>
+                                                                <div class="team">
+                                                                    <img src="assets/img/profile-11.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-12.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-13.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-14.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                </div>
+                                                                <div class="meta-info">
+                                                                    <div class="meta-action">
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Completed :</span> <span>37%</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Team Size :</span><span>8</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Deadline :</span><span>20 Dec 2020</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-4">
+                                                        <div class="card single-project">
+                                                            <img src="assets/img/company-4.jpg" class="card-img-top" alt="widget-card-2">
+                                                            <div class="card-body">
+                                                                <p class="meta-date">27 July 2020</p>
+                                                                <h5 class="card-title">Circle WebApp</h5>
+                                                                <p class="card-text">Node JS, Angular, AWS, Cloudinary Platform</p>
+                                                                <div class="team">
+                                                                    <img src="assets/img/profile-12.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-13.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-14.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-15.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                </div>
+                                                                <div class="meta-info">
+                                                                    <div class="meta-action">
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Completed :</span> <span>91%</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Team Size :</span><span>5</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Deadline :</span><span>31 May 2020</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-4">
+                                                        <div class="card single-project">
+                                                            <img src="assets/img/company-5.jpg" class="card-img-top" alt="widget-card-2">
+                                                            <div class="card-body">
+                                                                <p class="meta-date">11 Oct 2019</p>
+                                                                <h5 class="card-title">Linc Software</h5>
+                                                                <p class="card-text">Java, HTML, CSS, AWS, Cloudinary Platform</p>
+                                                                <div class="team">
+                                                                    <img src="assets/img/profile-21.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-22.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-23.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-24.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                </div>
+                                                                <div class="meta-info">
+                                                                    <div class="meta-action">
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Completed :</span> <span>69%</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Team Size :</span><span>4</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Deadline :</span><span>31 Jan 2020</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-4">
+                                                        <div class="card single-project">
+                                                            <img src="assets/img/company-6.jpg" class="card-img-top" alt="widget-card-2">
+                                                            <div class="card-body">
+                                                                <p class="meta-date">25 Sep 2019</p>
+                                                                <h5 class="card-title">Union Banco</h5>
+                                                                <p class="card-text">Node JS, Angular, AWS, Cloudinary Platform</p>
+                                                                <div class="team">
+                                                                    <img src="assets/img/profile-23.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-24.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-25.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-26.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                </div>
+                                                                <div class="meta-info">
+                                                                    <div class="meta-action">
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Completed :</span> <span>68%</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Team Size :</span><span>4</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Deadline :</span><span>25 Feb 2020</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-4">
+                                                        <div class="card single-project">
+                                                            <img src="assets/img/company-2.jpg" class="card-img-top" alt="widget-card-2">
+                                                            <div class="card-body">
+                                                                <p class="meta-date">25 Sep 2019</p>
+                                                                <h5 class="card-title">HT Software</h5>
+                                                                <p class="card-text">Java, HTML, CSS, AWS, Cloudinary Platform</p>
+                                                                <div class="team">
+                                                                    <img src="assets/img/profile-25.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-26.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-24.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-28.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                </div>
+                                                                <div class="meta-info">
+                                                                    <div class="meta-action">
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Completed :</span> <span>85%</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Team Size :</span><span>4</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Deadline :</span><span>20 Oct 2020</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-4">
+                                                        <div class="card single-project">
+                                                            <img src="assets/img/company-7.jpg" class="card-img-top" alt="widget-card-2">
+                                                            <div class="card-body">
+                                                                <p class="meta-date">25 Sep 2019</p>
+                                                                <h5 class="card-title">Hightech Software</h5>
+                                                                <p class="card-text">Node JS, Angular, AWS, Cloudinary Platform</p>
+                                                                <div class="team">
+                                                                    <img src="assets/img/profile-7.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-8.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-9.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                    <img src="assets/img/profile-10.jpg" class="rounded-circle avatar-xxs mr-1"/>
+                                                                </div>
+                                                                <div class="meta-info">
+                                                                    <div class="meta-action">
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Completed :</span> <span>51%</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Team Size :</span><span>4</span>
+                                                                        </div>
+                                                                        <div class="meta-bottom-info">
+                                                                            <span>Deadline :</span><span>31 Dec 2020</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Team -->
+                                            <div class="tab-pane fade" id="underline-team" role="tabpanel" aria-labelledby="underline-team-tab">
+                                                <div class="row w-100 m-0">
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                                                        <div class="card single-team">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="user-profile">
+                                                                        <img src="assets/img/profile-7.jpg" class="" alt="...">
+                                                                        <div class="text-center mt-2">
+                                                                            <a href="" class="font-25 text-primary"><i class="lab la-facebook-square"></i></a>
+                                                                            <a href="" class="font-25 text-info"><i class="lab la-twitter"></i></a>
+                                                                            <a href="" class="font-25 text-danger"><i class="lab la-youtube"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="user-info">
+                                                                        <h5 class="card-user_name">Johny Kilomion</h5>
+                                                                        <p class="card-user_occupation">Manager</p>
+                                                                        <div class="card-star_rating">
+                                                                        <span class="badge badge-primary mb-1">4 Years</span>
+                                                                        <span class="badge badge-primary">Java Expert</span>
+                                                                        <span class="badge badge-primary">30+ Projects</span>
+                                                                        </div>
+                                                                        <p class="card-text"> Maecenas nec mi vel lacus condimentum rhoncus dignissim egestas orci. Integer blandit porta placerat. </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                                                        <div class="card single-team">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="user-profile">
+                                                                        <img src="assets/img/profile-4.jpg" class="" alt="...">
+                                                                        <div class="text-center mt-2">
+                                                                            <a href="" class="font-25 text-primary"><i class="lab la-facebook-square"></i></a>
+                                                                            <a href="" class="font-25 text-info"><i class="lab la-twitter"></i></a>
+                                                                            <a href="" class="font-25 text-danger"><i class="lab la-youtube"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="user-info">
+                                                                        <h5 class="card-user_name">Nora Noyui</h5>
+                                                                        <p class="card-user_occupation">Digital Marketing</p>
+                                                                        <div class="card-star_rating">
+                                                                        <span class="badge badge-primary mb-1">4 Years</span>
+                                                                        <span class="badge badge-primary">SEO Expert</span>
+                                                                        <span class="badge badge-primary">30+ Projects</span>
+                                                                        </div>
+                                                                        <p class="card-text"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                                                        <div class="card single-team">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="user-profile">
+                                                                        <img src="assets/img/profile-3.jpg" class="" alt="...">
+                                                                        <div class="text-center mt-2">
+                                                                            <a href="" class="font-25 text-primary"><i class="lab la-facebook-square"></i></a>
+                                                                            <a href="" class="font-25 text-info"><i class="lab la-twitter"></i></a>
+                                                                            <a href="" class="font-25 text-danger"><i class="lab la-youtube"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="user-info">
+                                                                        <h5 class="card-user_name">Bear Gryllis</h5>
+                                                                        <p class="card-user_occupation">UI/UX Designer</p>
+                                                                        <div class="card-star_rating">
+                                                                        <span class="badge badge-primary mb-1">5 Years</span>
+                                                                        <span class="badge badge-primary">Ionic Expert</span>
+                                                                        <span class="badge badge-primary">3+ Projects</span>
+                                                                        </div>
+                                                                        <p class="card-text"> Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                                                        <div class="card single-team">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="user-profile">
+                                                                        <img src="assets/img/profile-2.jpg" class="" alt="...">
+                                                                        <div class="text-center mt-2">
+                                                                            <a href="" class="font-25 text-primary"><i class="lab la-facebook-square"></i></a>
+                                                                            <a href="" class="font-25 text-info"><i class="lab la-twitter"></i></a>
+                                                                            <a href="" class="font-25 text-danger"><i class="lab la-youtube"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="user-info">
+                                                                        <h5 class="card-user_name">Kathrine Lopez</h5>
+                                                                        <p class="card-user_occupation">System Admin</p>
+                                                                        <div class="card-star_rating">
+                                                                        <span class="badge badge-primary mb-1">10 Years</span>
+                                                                        <span class="badge badge-primary">.Net Expert</span>
+                                                                        <span class="badge badge-primary">20+ Projects</span>
+                                                                        </div>
+                                                                        <p class="card-text"> The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters and she is just fantastic </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+                                                        <div class="card single-team">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="user-profile">
+                                                                        <img src="assets/img/profile-1.jpg" class="" alt="...">
+                                                                        <div class="text-center mt-2">
+                                                                            <a href="" class="font-25 text-primary"><i class="lab la-facebook-square"></i></a>
+                                                                            <a href="" class="font-25 text-info"><i class="lab la-twitter"></i></a>
+                                                                            <a href="" class="font-25 text-danger"><i class="lab la-youtube"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="user-info">
+                                                                        <h5 class="card-user_name">Jin Johnson</h5>
+                                                                        <p class="card-user_occupation">Web Developer</p>
+                                                                        <div class="card-star_rating">
+                                                                        <span class="badge badge-primary mb-1">2 Years</span>
+                                                                        <span class="badge badge-primary">Angular Expert</span>
+                                                                        <span class="badge badge-primary">5+ Projects</span>
+                                                                        </div>
+                                                                        <p class="card-text"> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.  </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

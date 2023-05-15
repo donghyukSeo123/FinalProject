@@ -1,0 +1,14 @@
+package kr.or.ddit.vo;
+
+import lombok.Data;
+
+@Data
+public class AnnoKeywordVO {
+	
+	private int ANNO_KW;
+	private String ANNO_KWNAME;
+	private int ANNO_KWSUM;
+	private int ANNO_ID;
+	private int COM_ID;
+
+}

@@ -1,0 +1,261 @@
+package kr.or.ddit.controller.board;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.inject.Inject;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import kr.or.ddit.ServiceResult;
+import kr.or.ddit.service.IBoardService;
+import kr.or.ddit.vo.BoardVO;
+import kr.or.ddit.vo.MemberVO;
+import kr.or.ddit.vo.PaginationInfoVO;
+import lombok.extern.slf4j.Slf4j;
+import oracle.net.ano.Service;
+
+@Slf4j
+@Controller
+@RequestMapping("/board")
+public class BoardController {
+	
+	@Inject
+	private IBoardService boardService;
+	
+	
+	@RequestMapping(value="/list", method=RequestMethod.GET)
+	public String boardList(
+			@RequestParam(name="page", required=false, defaultValue = "1") int currentPage,
+			@RequestParam(required=false, defaultValue = "title") String searchType,
+			@RequestParam(required=false) String searchWord,
+			Model model) {
+		
+		PaginationInfoVO<BoardVO> pagingVO = new PaginationInfoVO<BoardVO>();
+		
+		if(StringUtils.isNotBlank(searchWord)) {
+			pagingVO.setSearchType(searchType);
+			pagingVO.setSearchWord(searchWord);
+			model.addAttribute("searchWord", searchWord);
+			model.addAttribute("searchWord", searchType);
+		}
+		
+		pagingVO.setCurrentPage(currentPage);
+		int totalRecord = boardService.selectBoardCount(pagingVO);
+		pagingVO.setTotalRecord(totalRecord);
+		List<BoardVO> boardList = boardService.selectBoardList(pagingVO);
+		pagingVO.setDataList(boardList);
+		
+		model.addAttribute("pagingVO",pagingVO);
+		log.info("나오냐?",pagingVO);
+		return "board/list";
+	}
+	
+	@RequestMapping(value="/form", method=RequestMethod.GET)
+	public String boardForm() {
+		return "board/register";
+		
+	}
+	
+	@RequestMapping(value="/insert", method = RequestMethod.POST)
+	public String boardInsert(
+			HttpServletRequest req,
+			BoardVO boardVO, Model model) {
+		
+		String goPage = "";
+		Map<String, String> errors = new HashMap<String, String>();
+		if(StringUtils.isBlank(boardVO.getBoardTitle())) {
+			errors.put("boardTitle", "제목을 입력해주세요");
+		}
+		if(StringUtils.isBlank(boardVO.getBoardContent())){
+			errors.put("boardContent", "내용을 입력해주세요");
+		}
+		if(errors.size()>0) {
+			model.addAttribute("errors",errors);
+			model.addAttribute("board",boardVO);
+			goPage="board/form";
+		}else {
+			HttpSession session = req.getSession(); 
+			MemberVO memberVO = (MemberVO) session.getAttribute("SessionInfo");
+			if(memberVO !=null) {
+				boardVO.setMemId(memberVO.getMemId());
+				ServiceResult result = boardService.insertBoard(req, boardVO);
+				if(result.equals(ServiceResult.OK)) {
+					goPage = "redirect:/board/detail?boardId="+boardVO.getBoardId(); 
+	//// 여기 조건이 boardId랑 && memId를 같은것들을 찾아야하는거 아닌가? 
+				}else {
+					errors.put("message", "서버에러, 다시 시도해주세요.");
+					model.addAttribute("errors",errors);
+					goPage= "board/register";
+				}
+			}else {
+				model.addAttribute("messages", "로그인후 사용이 가능합니다.");
+				model.addAttribute("board",boardVO);
+				goPage="board/form";
+			}
+		}
+		
+		
+		return goPage;
+	}
+<<<<<<< .mine
+	
+||||||| .r314381
+=======
+	
+	
+	
+	@RequestMapping(value="/read",method=RequestMethod.GET)
+	public String boardDetail(int boardId, Model model) {
+		BoardVO boardVO = boardService.selectBoard(boardId);
+		model.addAttribute("board", boardVO);
+		return "board/read";
+	}
+	
+	
+	@RequestMapping(value="/update", method=RequestMethod.GET)
+	public String boardUpdate(int boardId, Model model) {
+		BoardVO boardVO = boardService.selectBoard(boardId);
+		return "board/modify";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+>>>>>>> .r314400
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

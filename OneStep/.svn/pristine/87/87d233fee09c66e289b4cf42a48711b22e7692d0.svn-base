@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div class="sub-header-container">
+	<header class="header navbar navbar-expand-sm">
+		<ul class="navbar-nav flex-row">
+			<li>
+				<div class="page-header">
+					<nav class="breadcrumb-one" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item active" aria-current="page"><span>Datatables</span></li>
+						</ol>
+					</nav>
+				</div>
+			</li>
+		</ul>
+		<ul class="navbar-nav d-flex align-center ml-auto right-side-filter">
+			<li class="">
+				<p class="current-time" id="currentTime"></p>
+				<p class="current-date" id="currentDate"></p>
+			</li>
+		</ul>
+	</header>
+</div>
+<!--  Navbar Ends / Breadcrumb Area  -->
+<!-- Main Body Starts -->
+<div class="layout-px-spacing">
+	<form class="search-bar p-3">
+		<div class="position-relative">
+			<input type="text" class="form-control search-form-control"
+				placeholder="Search"> <span class="mdi mdi-magnify"></span>
+		</div>
+	</form>
+</div>
+	<div class="contents_item"><button class="company_add_button" type="button"><i class="jp-plus"></i>비교기업 추가</button></div>
+	
+	
+</div>

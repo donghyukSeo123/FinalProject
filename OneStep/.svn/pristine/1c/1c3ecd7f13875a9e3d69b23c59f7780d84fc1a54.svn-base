@@ -1,0 +1,9 @@
+package kr.or.ddit.service;
+
+import kr.or.ddit.vo.AnnoVO;
+
+public interface ICompanyService {
+
+	void insert(AnnoVO anno);
+
+}

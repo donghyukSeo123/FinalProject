@@ -1,0 +1,66 @@
+package kr.or.ddit.service.impl;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.ddit.mapper.CompanyMapper;
+import kr.or.ddit.service.ICompanyService;
+import kr.or.ddit.vo.AnnoVO;
+import kr.or.ddit.vo.CompanyVO;
+
+@Service
+public class CompanyServiceImpl implements ICompanyService {
+	
+	@Inject 
+	private CompanyMapper mapper;
+
+	@Override
+	public void insert(AnnoVO anno) {
+		mapper.insert(anno);
+		
+	}
+
+	@Override
+	public void insertCompany(CompanyVO vo, HttpServletRequest req) throws Exception {
+		
+		mapper.insertCompany(vo);
+		
+		if(vo.getLogoFile().getSize()>0) {
+			String uuid =UUID.randomUUID().toString();
+			String fileName =vo.getLogoFile().getOriginalFilename();
+			String path =req.getSession().getServletContext().getRealPath("/");
+			String savePath = path + "upload/";
+			fileName+="_"+uuid;
+			
+			
+			File file = new File(savePath);
+			if (!file.exists()) {
+				file.mkdirs();
+			}
+
+			savePath += "/" + fileName;
+			File saveFile = new File(savePath);
+			
+			vo.setCompanyLogo(fileName);
+			System.out.println(vo.getCompanyId());
+			
+			mapper.insertFile(vo);
+
+			// 방법1
+			vo.getLogoFile().transferTo(saveFile); // 파일 복사
+			
+			
+			
+			
+			
+		}
+		
+	}
+
+}

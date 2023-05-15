@@ -1,0 +1,44 @@
+package kr.or.ddit.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import kr.or.ddit.vo.AnnoKeywordVO;
+import kr.or.ddit.vo.AnnoVO;
+import kr.or.ddit.vo.BoardVO;
+import kr.or.ddit.vo.MemberVO;
+import kr.or.ddit.vo.CompanyVO;
+
+@Mapper
+public interface CompanyMapper {
+
+	void insertAnno(AnnoVO anno);
+
+	List<AnnoVO> selectAnno(int comId);
+
+	int deleteAnno(int annoId);
+
+	AnnoVO selectAnnoOne(int annoId);
+
+	int updateAnno(AnnoVO annoVO);
+
+	List<MemberVO> selectMember();
+
+	void insertCompany(CompanyVO vo);
+
+	void insertFile(CompanyVO vo);
+
+	void insertAnnoFile(AnnoVO anno);
+
+	List<AnnoKeywordVO> selectAnnoKeyword();
+
+	CompanyVO getCompany(String companyId);
+
+	List<MemberVO> selectinterMember(int comId);
+
+	List<MemberVO> selectApplyMem(int comId);
+
+	List<BoardVO> noticeList();
+
+}

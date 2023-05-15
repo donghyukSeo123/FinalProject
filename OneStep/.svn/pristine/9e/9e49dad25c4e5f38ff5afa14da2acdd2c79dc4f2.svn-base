@@ -1,0 +1,146 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!--  Sidebar Starts  -->
+<div class="sidebar-wrapper sidebar-theme">
+    <div>
+        <div class="sc-container">
+        </div>
+        <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
+            <i class="las la-angle-left"></i>
+        </a>
+    </div>
+    <nav id="sidebar">
+        <ul class="navbar-item theme-brand flex-row  text-center">
+            <li class="nav-item theme-logo">
+                <a href="index.html">
+                    <img src="${pageContext.request.contextPath }/resources/assets/img/onestep.png" class="navbar-logo" alt="logo">
+                </a>
+            </li>
+            <li class="nav-item theme-text">
+                <a href="index.html" class="nav-link"> ONESTEP </a>
+            </li>
+        </ul>
+        <ul class="list-unstyled menu-categories" id="accordionExample">
+            <li class="menu">
+                <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i class="las la-home"></i>
+                        <span>공고 등록</span>
+                    </div>
+
+                </a>
+
+            </li>
+            
+            </li>
+            <li class="menu">
+                <a href="#app"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i class="lab la-medapps"></i>
+                        <span>공고 지원자 관리</span>
+                    </div>
+                    <div>
+                        <i class="las la-angle-right sidemenu-right-icon"></i>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="app" data-parent="#accordionExample">
+                    <li>
+                        <a href="apps_calendar.html"> 전체 채용 공고 </a>
+                    </li>
+                    <li>
+                        <a href="apps_chat.html"> 지원자 관리 </a>
+                    </li>
+                    <li>
+                        <a href="apps_chat.html"> 면접 캘린더 </a>
+                    </li>
+                </ul>
+            <li class="menu-title"></li>
+            <li class="menu">
+                <a href="#authentication" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i class="las la-lock"></i>
+                        <span>인재겸색</span>
+                    </div>
+                    <div>
+                    </div>
+                    </a>
+                    </li>
+                  <ul class="list-unstyled menu-categories" id="accordionExample">
+            <li class="menu">
+                <a href="#authentication" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i class="lab la-medapps"></i>
+                        <span>인재관리</span>
+                    </div>
+
+                    
+                </a>
+
+            </li>
+            </li>
+                   
+
+            </li>
+            <li class="menu-title"></li>
+            
+            <li class="menu">
+                <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i class="las la-file"></i>
+                        <span>프리미엄</span>
+                    </div>
+                    </a>
+                    <li class="menu">
+                <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i class="las la-file"></i>
+                        <span>공지사항</span>
+                    </div>
+                    </a>
+            <li class="menu">
+                <a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i class="las la-drafting-compass"></i>
+                        <span>커뮤니티</span>
+                    </div>
+                    <div>
+                        <i class="las la-angle-right sidemenu-right-icon"></i>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
+                    <li>
+                        <a href="basic_ui_dragitems.html">자유 커뮤니티</a>
+                    </li>
+                    <li>
+                        <a href="basic_ui_accordion.html"> 자소서 커뮤니티  </a>
+                    </li>
+                    <li>
+                        <a href="basic_ui_animation.html"> 면접 커뮤니티 </a>
+                    </li>
+                    <li>
+                        <a href="basic_ui_cards.html"> 채용 커뮤니티 </a>
+                    </li>
+                    <li>
+                        <a href="basic_ui_carousel.html">신입 커뮤니티</a>
+                    </li>
+                    <li>
+                        <a href="basic_ui_countdown.html"> 이직 커뮤니티 </a>
+                    </li>
+                    <li>
+                        <a href="basic_ui_counter.html"> 퇴사커뮤니티 </a>
+                    </li>
+                    <li>
+                        <a href="basic_ui_lightbox.html"> 프리랜서 커뮤니티 </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="menu">
+                <a href="#elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i class="lab la-elementor"></i>
+                        <span>프리랜서</span>
+                    </div>
+        </ul>
+    </nav>
+</div>
+<!--  Sidebar Ends  -->

@@ -1,0 +1,425 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<title>템플릿</title>
+</head>
+<body>
+       <div id="content" class="main-content">
+            <!--  Navbar Starts / Breadcrumb Area  -->
+            <div class="sub-header-container">
+                <header class="header navbar navbar-expand-sm">
+                    <ul class="navbar-nav flex-row">
+                        <li>
+                            <div class="page-header">
+                                <nav class="breadcrumb-one" aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Apps</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page"><span>Contacts</span></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav d-flex align-center ml-auto right-side-filter">
+                        <li class="">
+                            <p class="current-time" id="currentTime"></p>
+                            <p class="current-date" id="currentDate"></p>
+                        </li>
+                    </ul>
+                </header>
+            </div>
+            <!--  Navbar Ends / Breadcrumb Area  -->
+            <!-- Main Body Starts -->
+            <div class="layout-px-spacing">                
+                <div class="row layout-spacing layout-top-spacing" id="cancel-row">
+                    <div class="col-lg-12">
+                        <div class="">
+                            <div class="widget-content searchable-container list">
+                                <div class="card-box">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-7 filtered-list-search align-self-center">
+                                            <form class="form-inline my-2 my-lg-0">
+                                                <div class="">
+                                                    <i class="las la-search toggle-search"></i>
+                                                    <input type="text" id="input-search" class="form-control search-form-control  ml-lg-auto" placeholder="Search Contacts">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-5 text-sm-right text-center align-self-center">
+                                            <div class="d-flex justify-content-sm-end justify-content-center contact-options">
+                                                <a id="btn-add-contact" class="pointer font-25 s-o mr-2">
+                                                    <i class="las la-user-plus"></i>
+                                                </a>
+                                                <a class="pointer font-25 view-list active-view s-o mr-2">
+                                                    <i class="las la-list"></i>
+                                                </a>
+                                                <a class="pointer font-25 view-grid s-o mr-2">
+                                                    <i class="las la-th-large"></i>
+                                                </a>
+                                                <a class="pointer font-25 s-o">
+                                                    <i class="las la-cog"></i>
+                                                </a>
+                                                <div class="dropdown custom-dropdown-icon mt-1">
+                                                    <a class="dropdown-toggle" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Sort By</span> <i class="las la-angle-down"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown" style="will-change: transform;">
+                                                        <a class="dropdown-item" href="javascript:void(0);">Full name</a>
+                                                        <a class="dropdown-item" href="javascript:void(0);">Email Id</a>
+                                                        <a class="dropdown-item" href="javascript:void(0);">Location</a>
+                                                        <a class="dropdown-item" href="javascript:void(0);">Added Date</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Add Modal -->
+                                            <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="addContactModalTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <i class="flaticon-cancel-12 close" data-dismiss="modal"></i>
+                                                            <div class="add-contact-box">
+                                                                <div class="add-contact-content">
+                                                                    <h5 class="text-center mb-4">Add a Contact</h5>
+                                                                    <form id="addContactModalTitle">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 text-center">
+                                                                                <img id="image" src="https://via.placeholder.com/75x75" style="border-radius:50%"/>
+                                                                                <input type="file" id="myfile" style="display: none;"/>
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="contact-name">
+                                                                                    <i class="las la-user"></i>
+                                                                                    <input type="text" id="c-name" class="form-control" placeholder="Name">
+                                                                                    <span class="validation-text"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="contact-email">
+                                                                                    <i class="las la-envelope"></i>
+                                                                                    <input type="text" id="c-email" class="form-control" placeholder="Email">
+                                                                                    <span class="validation-text"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                <div class="contact-designation">
+                                                                                    <i class="las la-briefcase"></i>
+                                                                                    <input type="text" id="c-designation" class="form-control" placeholder="Designation">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="contact-contact">
+                                                                                    <i class="las la-phone"></i>
+                                                                                    <input type="text" id="c-contact" class="form-control" placeholder="Contact">
+                                                                                    <span class="validation-text"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <div class="contact-location">
+                                                                                    <i class="las la-map-marker"></i>
+                                                                                    <input type="text" id="c-location" class="form-control" placeholder="Location">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a data-dismiss="modal" class="pointer text-primary font-12 mr-3">Close</a>
+                                                            <button class="btn btn-sm btn-primary">Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Edit Modal -->
+                                            <div class="modal fade" id="editContactModal" tabindex="-1" role="dialog" aria-labelledby="editContactModalTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <i class="flaticon-cancel-12 close" data-dismiss="modal"></i>
+                                                            <div class="add-contact-box">
+                                                                <div class="add-contact-content">
+                                                                    <h5 class="text-center mb-4">Edit Contact</h5>
+                                                                    <form id="addContactModalTitle">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 text-center">
+                                                                                <img id="image" src="assets/img/profile-5.jpg" style="border-radius:50%"/>
+                                                                                <input type="file" id="myfile" style="display: none;"/>
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="contact-name">
+                                                                                    <i class="las la-user"></i>
+                                                                                    <input value="Azeemo Shaan" type="text" id="c-name" class="form-control" placeholder="Name">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="contact-email">
+                                                                                    <i class="las la-envelope"></i>
+                                                                                    <input value="azeemo@mail.com" type="text" id="c-email" class="form-control" placeholder="Email">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                <div class="contact-designation">
+                                                                                    <i class="las la-briefcase"></i>
+                                                                                    <input value="Web Developer" type="text" id="c-designation" class="form-control" placeholder="Designation">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="contact-contact">
+                                                                                    <i class="las la-phone"></i>
+                                                                                    <input value="California, USA" type="text" id="c-contact" class="form-control" placeholder="Contact">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <div class="contact-location">
+                                                                                    <i class="las la-map-marker"></i>
+                                                                                    <input value="+1 (070) 123-4567" type="text" id="c-location" class="form-control" placeholder="Location">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a data-dismiss="modal" class="pointer text-primary font-12 mr-3">Close</a>
+                                                            <button class="btn btn-sm btn-primary">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="searchable-items list card-box">
+                                    <div class="items items-header-section">
+                                        <div class="item-content">
+                                            <div class="">
+                                                <h4>Full Name</h4>
+                                            </div>
+                                            <div class="user-email">
+                                                <h4>Email Id</h4>
+                                            </div>
+                                            <div class="user-location">
+                                                <h4 style="margin-left: 0;">Location</h4>
+                                            </div>
+                                            <div class="user-phone">
+                                                <h4 style="margin-left: 3px;">Contact</h4>
+                                            </div>
+                                            <div class="user-phone">
+                                                <h4 style="margin-left: 3px;">Options</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="item-content">
+                                            <div class="user-profile">
+                                                <img src="assets/img/profile-5.jpg" alt="avatar">
+                                                <div class="user-meta-info">
+                                                    <p class="user-name">Azeemo Shaan</p>
+                                                    <p class="user-work">Web Developer</p>
+                                                </div>
+                                            </div>
+                                            <div class="user-email">
+                                                <p class="usr-email-addr"><span><i class="lar la-envelope"></i></span>azimo@mail.com</p>
+                                            </div>
+                                            <div class="user-location">
+                                                <p class="usr-location"><span><i class="las la-map-marker"></i></span>California, USA</p>
+                                            </div>
+                                            <div class="user-phone">
+                                                <p class="usr-ph-no"><span><i class="las la-phone"></i></span>+1 (070) 123-4567</p>
+                                            </div>
+                                            <div class="action-btn">
+                                                <i class="lar la-edit text-primary font-20 mr-2 btn-edit-contact"></i>
+                                                <i class="lar la-trash-alt text-danger font-20 mr-2"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="item-content">
+                                            <div class="user-profile">
+                                                <img src="assets/img/profile-11.jpg" alt="avatar">
+                                                <div class="user-meta-info">
+                                                    <p class="user-name">Thara Darbar</p>
+                                                    <p class="user-work">Web Developer</p>
+                                                </div>
+                                            </div>
+                                            <div class="user-email">
+                                                <p class="usr-email-addr"><span><i class="lar la-envelope"></i></span>thara@mail.com</p>
+                                            </div>
+                                            <div class="user-location">
+                                                <p class="usr-location"><span><i class="las la-map-marker"></i></span>Paris, France</p>
+                                            </div>
+                                            <div class="user-phone">
+                                                <p class="usr-ph-no"><span><i class="las la-phone"></i></span>+1 (070) 123-4567</p>
+                                            </div>
+                                            <div class="action-btn">
+                                                <i class="lar la-edit text-primary font-20 mr-2 btn-edit-contact"></i>
+                                                <i class="lar la-trash-alt text-danger font-20 mr-2"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="item-content">
+                                            <div class="user-profile">
+                                                <img src="assets/img/profile-12.jpg" alt="avatar">
+                                                <div class="user-meta-info">
+                                                    <p class="user-name">Zera Ho Bayan</p>
+                                                    <p class="user-work">UI Designer</p>
+                                                </div>
+                                            </div>
+                                            <div class="user-email">
+                                                <p class="usr-email-addr"><span><i class="lar la-envelope"></i></span>zera@mail.com</p>
+                                            </div>
+                                            <div class="user-location">
+                                                <p class="usr-location"><span><i class="las la-map-marker"></i></span>Chicago, USA</p>
+                                            </div>
+                                            <div class="user-phone">
+                                                <p class="usr-ph-no"><span><i class="las la-phone"></i></span>+1 (070) 123-4567</p>
+                                            </div>
+                                            <div class="action-btn">
+                                                <i class="lar la-edit text-primary font-20 mr-2 btn-edit-contact"></i>
+                                                <i class="lar la-trash-alt text-danger font-20 mr-2"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="item-content">
+                                            <div class="user-profile">
+                                                <img src="assets/img/profile-3.jpg" alt="avatar">
+                                                <div class="user-meta-info">
+                                                    <p class="user-name">Badai Johnson</p>
+                                                    <p class="user-work">Team Lead</p>
+                                                </div>
+                                            </div>
+                                            <div class="user-email">
+                                                <p class="usr-email-addr"><span><i class="lar la-envelope"></i></span>badai@mail.com</p>
+                                            </div>
+                                            <div class="user-location">
+                                                <p class="usr-location"><span><i class="las la-map-marker"></i></span>Madrid, Spain</p>
+                                            </div>
+                                            <div class="user-phone">
+                                                <p class="usr-ph-no"><span><i class="las la-phone"></i></span>+1 (070) 123-4567</p>
+                                            </div>
+                                            <div class="action-btn">
+                                                <i class="lar la-edit text-primary font-20 mr-2 btn-edit-contact"></i>
+                                                <i class="lar la-trash-alt text-danger font-20 mr-2"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="item-content">
+                                            <div class="user-profile">
+                                                <img src="assets/img/profile-15.jpg" alt="avatar">
+                                                <div class="user-meta-info">
+                                                    <p class="user-name">Cory Anderson</p>
+                                                    <p class="user-work">Sales</p>
+                                                </div>
+                                            </div>
+                                            <div class="user-email">
+                                                <p class="usr-email-addr"><span><i class="lar la-envelope"></i></span>cory@mail.com</p>
+                                            </div>
+                                            <div class="user-location">
+                                                <p class="usr-location"><span><i class="las la-map-marker"></i></span>Liverpool, England</p>
+                                            </div>
+                                            <div class="user-phone">
+                                                <p class="usr-ph-no"><span><i class="las la-phone"></i></span>+1 (070) 123-4567</p>
+                                            </div>
+                                            <div class="action-btn">
+                                                <i class="lar la-edit text-primary font-20 mr-2 btn-edit-contact"></i>
+                                                <i class="lar la-trash-alt text-danger font-20 mr-2"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="item-content">
+                                            <div class="user-profile">
+                                                <img src="assets/img/profile-7.jpg" alt="avatar">
+                                                <div class="user-meta-info">
+                                                    <p class="user-name">Neil Pattinson</p>
+                                                    <p class="user-work">Database Admin</p>
+                                                </div>
+                                            </div>
+                                            <div class="user-email">
+                                                <p class="usr-email-addr"><span><i class="lar la-envelope"></i></span>neil@mail.com</p>
+                                            </div>
+                                            <div class="user-location">
+                                                <p class="usr-location"><span><i class="las la-map-marker"></i></span>New York, USA</p>
+                                            </div>
+                                            <div class="user-phone">
+                                                <p class="usr-ph-no"><span><i class="las la-phone"></i></span>+1 (070) 123-4567</p>
+                                            </div>
+                                            <div class="action-btn">
+                                                <i class="lar la-edit text-primary font-20 mr-2 btn-edit-contact"></i>
+                                                <i class="lar la-trash-alt text-danger font-20 mr-2"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="item-content">
+                                            <div class="user-profile"><img src="assets/img/profile-29.jpg" alt="avatar">
+                                                <div class="user-meta-info">
+                                                    <p class="user-name">Jennie Lopez</p>
+                                                    <p class="user-work">CSO</p>
+                                                </div>
+                                            </div>
+                                            <div class="user-email"><p class="usr-email-addr"><span><i class="lar la-envelope"></i></span>Jennie@mail.com</p>
+                                            </div>
+                                            <div class="user-location"><p class="usr-location"><span><i class="las la-map-marker"></i></span>Sao Paolo, Brazil</p>
+                                            </div>
+                                            <div class="user-phone"><p class="usr-ph-no"><span><i class="las la-phone"></i></span>+1 (070) 123-4567</p>
+                                            </div>
+                                            <div class="action-btn">
+                                                <i class="lar la-edit text-primary font-20 mr-2 btn-edit-contact"></i>
+                                                <i class="lar la-trash-alt text-danger font-20 mr-2"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pagination p13 text-center mt-4 w-100">
+                                        <ul class="mx-auto">
+                                        <a href="#" class="prev"><li>Prev</li></a>
+                                        <a class="is-active" href="#"><li>1</li></a>
+                                        <a href="#"><li>2</li></a>
+                                        <a href="#"><li>3</li></a>
+                                        <a href="#" class="next"><li>Next</li></a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Body Ends -->
+            <div class="responsive-msg-component">
+                <p>
+                    <a class="close-msg-component"><i class="las la-times"></i></a>
+                    Please reload the page when you change the viewport size to view the responsive functionalities correctly
+                </p>
+            </div>
+            <!-- Copyright Footer Starts -->
+            <div class="footer-wrapper">
+                <div class="footer-section f-section-1">
+                    <p class="">Copyright © 2021 <a target="_blank" href="https://xato-web.web.app/">XatoWeb</a>, All rights reserved.</p>
+                </div>
+                <div class="footer-section f-section-2">
+                    <p class="">Crafted with extra <i class="las la-heart text-danger"></i></p>
+                </div>
+            </div>
+            <!-- Copyright Footer Ends -->
+            <!-- Arrow Starts -->
+            <div class="scroll-top-arrow" style="display: none;">
+                <i class="las la-angle-up"></i>
+            </div>
+            <!-- Arrow Ends -->
+        </div>
+</body>
+</html>

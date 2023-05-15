@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.BoardMapper">
+
+
+	<sql id="boardSearch">
+		<if test="searchType !=null and searchType=='title'">
+			and (board_title like '%'||#{searchWord}||'%')
+		</if>
+		<if test="searchType !=null and searchType=='writer'">
+			and (board_writer like '%'||#{searchWord}||'%')
+		</if>
+	</sql>
+	
+	<select id="selectBoardCount" parameterType="pagingVO" resultType="int">
+		select count(board_id)
+		  from board
+		 where 1=1
+		<include refid="boardSearch"/>
+	</select>
+	
+	
+	<select id="selectBoardList" parameterType="pagingVO" resultType="boardVO">
+	select
+		b.*
+	  from(	
+		select
+		    a.*, row_number() over (order by a.board_id desc) rnum
+		    from(	
+				select 
+					   board_id, b.mem_id, board_title, board_content, 
+					   board_start, board_hit, board_warn, board_category
+				  from board b left outer join member m on(b.mem_id = m.mem_id)
+				 where 1=1
+				 <include refid="boardSearch"/>
+			     order by board_id desc
+			)a
+		)b
+		<![CDATA[
+			where b.rnum>=#{startRow} and b.rnum<=#{endRow}
+		]]>
+	</select>
+	
+	
+	<insert id="insertBoard" parameterType="boardVO" useGeneratedKeys="true">
+		<selectKey keyProperty="boardId" resultType="int" order="BEFORE">
+			select seq_boardid.nextval from dual
+		</selectKey>
+		insert into board(
+			board_id, mem_id, board_title, board_content, board_start,
+			board_category
+		)values(
+			#{boardId}, #{memId}, #{boardTitle}, #{boardContent}, sysdate, #{boardCategory}
+		)
+	</insert>
+	
+	<!--조회수 업데이트부분-->
+	<update id="incrementHit" parameterType="int">
+		update board
+		   set
+		       board_hit = board_hit + 1
+		 where board_id = #{boardId} 
+	</update>
+	
+	
+	<!--상세보기부분 -->
+	<select id="selectBoard" parameterType="int" resultType="boardVO">
+		select
+			  board_id, mem_id, board_title, board_content, board_start, board_hit,
+			  board_warn, board_category
+		  from board
+		 where board_id = #{boardId}
+	</select>
+	
+	
+	<update id="updateBoard" parameterType="boardVO">
+		update board
+		   set 
+		   	   board_title = #{boardTitle},
+		       board_content = #{boardContent},
+		       board_start = sysdate
+		 where board_id = #{boardId}
+	</update>
+	
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete from board
+		 where board_id = #{boardId}
+	</delete>
+	
+	
+	<delete id="deleteBoardFileByBoardId" parameterType="int">
+		delete from attach
+		 where att_id = #{attId}
+	</delete>
+	
+	
+	
+	<insert id="insertBoardFile" parameterType="attVO">
+		insert into attach(
+			att_id, att_path, att_savename, att_filename, att_mime, att_filesize,
+			att_fancysize, att_download, mem_id, company_id, anno_id, board_id
+		)values(
+			seq_attid.nextval, #{attPath}, #{attSaveName}, #{attFileName}, #{attMime}, 
+			#{attFileSize}, #{attFancySize}, 0, #{memId}, #{companyId}, #{annId}, #{boardId}
+		)
+	</insert>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

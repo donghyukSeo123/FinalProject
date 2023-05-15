@@ -1,0 +1,14 @@
+package kr.or.ddit.service;
+
+import javax.servlet.http.HttpServletRequest;
+
+import kr.or.ddit.vo.AnnoVO;
+import kr.or.ddit.vo.CompanyVO;
+
+public interface ICompanyService {
+
+	void insert(AnnoVO anno);
+
+	void insertCompany(CompanyVO vo, HttpServletRequest req) throws Exception;
+
+}

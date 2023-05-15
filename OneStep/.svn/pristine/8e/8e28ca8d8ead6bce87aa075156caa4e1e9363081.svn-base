@@ -1,0 +1,27 @@
+package kr.or.ddit.mapper;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import kr.or.ddit.ServiceResult;
+import kr.or.ddit.vo.AttVO;
+import kr.or.ddit.vo.BoardVO;
+import kr.or.ddit.vo.PaginationInfoVO;
+
+public interface BoardMapper {
+
+	public int selectBoardCount(PaginationInfoVO<BoardVO> pagingVO);
+	public List<BoardVO> selectBoardList(PaginationInfoVO<BoardVO> pagingVO);
+	public int insertBoard(BoardVO boardVO);
+	public void incrementHit(int boardId);
+	public BoardVO selectBoard(int boardId);
+
+	public int updateBoard(BoardVO boardVO);
+	public int deleteBoard(int boardId);
+	
+	public AttVO selectBoardFile(Integer integer);
+	public void deleteBoardFile(Integer integer);
+	public void deleteBoardFileByBoardId(int boardId);
+
+}

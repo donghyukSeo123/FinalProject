@@ -1,0 +1,40 @@
+package kr.or.ddit.master.controller;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import kr.or.ddit.master.service.IPaymentService;
+import kr.or.ddit.prod.vo.ProdVO;
+import lombok.extern.slf4j.Slf4j;
+
+
+@Slf4j
+@Controller
+@RequestMapping("/master")
+public class PaymentController {
+
+	@Inject
+	private IPaymentService payService;
+	
+	@RequestMapping(value = "/payment", method = RequestMethod.GET)
+	public String paymentList(Model model) throws Exception {
+		List<ProdVO> prodList = payService.prodList();
+		model.addAttribute("prodList",prodList);
+		return "master/masterPayment";
+	}
+	
+	@RequestMapping(value = "/prodyear", method = RequestMethod.POST)
+	public String prodYear(Model model, String year) throws Exception {
+		List<ProdVO> prodYear = payService.prodYear(year);
+		model.addAttribute("prodYear",prodYear);
+		log.info("나와야한다 : " + prodYear);
+		return "master/masterPayment";
+	}
+	
+}

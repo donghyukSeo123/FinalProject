@@ -1,0 +1,17 @@
+package kr.or.ddit.mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import kr.or.ddit.vo.AnnoVO;
+import kr.or.ddit.vo.CompanyVO;
+
+@Mapper
+public interface CompanyMapper {
+
+	void insert(AnnoVO anno);
+
+	void insertCompany(CompanyVO vo);
+
+	void insertFile(CompanyVO vo);
+
+}

@@ -1,0 +1,137 @@
+package kr.or.ddit.service.impl;
+
+import java.util.List;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.ddit.ServiceResult;
+import kr.or.ddit.mapper.CompanyMapper;
+import kr.or.ddit.service.ICompanyService;
+import kr.or.ddit.vo.AnnoVO;
+import kr.or.ddit.vo.MemberVO;
+import kr.or.ddit.vo.CompanyVO;
+
+@Service
+public class CompanyServiceImpl implements ICompanyService {
+   
+   @Inject 
+   private CompanyMapper mapper;
+
+   @Override
+   public void insertAnno(HttpServletRequest req,AnnoVO anno) throws Exception {
+      mapper.insertAnno(anno);
+      
+      if(anno.getAttAnno().getSize()>0) {
+          String uuid =UUID.randomUUID().toString();
+          String fileName =anno.getAttAnno().getOriginalFilename().replaceAll(" ", "_");
+          String path =req.getSession().getServletContext().getRealPath("/resources/upload");
+          String savePath = path + "/";
+          fileName += "_"+uuid;
+          
+          
+          File file = new File(savePath);
+          if (!file.exists()) {
+             file.mkdirs();
+          }
+
+          savePath += "/" + fileName;
+          File saveFile = new File(savePath);
+          
+          anno.setAttId(fileName);
+          
+          mapper.insertAnnoFile(anno);
+
+          // 방법1
+          anno.getAttAnno().transferTo(saveFile); // 파일 복사
+          
+       }
+      
+   }
+
+   @Override
+   public List<AnnoVO> selectAnno(int comId) {
+      List<AnnoVO> selectAnno = mapper.selectAnno(comId);
+      return selectAnno;
+   }
+
+   @Override
+   public ServiceResult deleteAnno( int annoId) {
+      ServiceResult result = null;
+      int cnt = mapper.deleteAnno(annoId);
+      if(cnt > 0) {
+         result = ServiceResult.OK;
+      }else {
+         result = ServiceResult.FAILED;
+      }
+      return result;
+   }
+
+   @Override
+   public AnnoVO selectAnnoOne(int annoId) {
+      return mapper.selectAnnoOne(annoId);
+   }
+
+   @Override
+   public ServiceResult updateAnno(AnnoVO annoVO) {
+      ServiceResult result = null;
+      int cnt = mapper.updateAnno(annoVO);
+      if(cnt > 0) {
+         result = ServiceResult.OK;
+      }else {
+         result = ServiceResult.FAILED;
+      }
+      return result;
+   }
+
+   @Override
+   public List<MemberVO> selectMember() {
+      return  mapper.selectMember();
+   }
+
+   @Override
+   public void insertCompany(CompanyVO vo, HttpServletRequest req) throws Exception {
+      
+      mapper.insertCompany(vo);
+      
+      if(vo.getLogoFile().getSize()>0) {
+         String uuid =UUID.randomUUID().toString();
+         String fileName =vo.getLogoFile().getOriginalFilename().replaceAll(" ", "_");
+         String path =req.getSession().getServletContext().getRealPath("/resources/upload");
+         String savePath = path + "/";
+         fileName += "_"+uuid;
+         
+         
+         File file = new File(savePath);
+         if (!file.exists()) {
+            file.mkdirs();
+         }
+
+         savePath += "/" + fileName;
+         File saveFile = new File(savePath);
+         
+         vo.setCompanyLogo(fileName);
+         System.out.println(vo.getCompanyId());
+         
+         mapper.insertFile(vo);
+
+         // 방법1
+         vo.getLogoFile().transferTo(saveFile); // 파일 복사
+         
+      }
+   }
+
+   @Override
+   public CompanyVO getCompany(String companyId) {
+      // TODO Auto-generated method stub
+      return mapper.getCompany(companyId);
+   }
+
+
+}

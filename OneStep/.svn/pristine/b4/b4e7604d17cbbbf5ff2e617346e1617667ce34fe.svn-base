@@ -1,0 +1,28 @@
+package kr.or.ddit.controller.master;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import kr.or.ddit.service.IMasterService;
+import kr.or.ddit.vo.MemberVO;
+
+@Controller
+@RequestMapping("/master")
+public class MasterController {
+
+	@Inject
+	private IMasterService masterService;
+	
+	@RequestMapping(value = "/member" , method = RequestMethod.GET)
+	public String memberController(Model model) throws Exception {
+		List<MemberVO> memberList = masterService.list();
+		model.addAttribute("list", memberList);
+		return "master/masterMember";
+	}
+}

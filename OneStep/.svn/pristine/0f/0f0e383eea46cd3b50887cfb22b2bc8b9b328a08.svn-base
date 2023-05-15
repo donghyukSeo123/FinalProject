@@ -1,0 +1,317 @@
+ <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <div class="sub-header-container">
+            <header class="header navbar navbar-expand-sm">
+                <ul class="navbar-nav flex-row">
+                    <li>
+                        <div class="page-header">
+                            <nav class="breadcrumb-one" aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Forms</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-flex align-center ml-auto right-side-filter">
+                    <li class="">
+                        <p class="current-time" id="currentTime"></p>
+                        <p class="current-date" id="currentDate"></p>
+                    </li>
+                </ul>
+            </header>
+        </div>
+     
+       <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                        <div class="widget ecommerce-table">
+                                            <div class="widget-heading">
+                                                <h5 class="">나의 채용 공고</h5>
+                                               
+                                            </div>
+                                            <div class="widget-content">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="th-content">
+                                                                        <div class="login-one-inputs check">
+                                                                            <input class="inp-cbx" id="cbx" type="checkbox" style="display: none"/>
+                                                                            <label class="cbx" for="cbx">
+                                                                                <span>
+                                                                                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                    </svg>
+                                                                                </span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </th>
+                                                                <th><div class="th-content">공고 제목</div></th>
+                                                                <th><div class="th-content">모집분야 • 모집인원</div></th>
+                                                                <th><div class="th-content">조회수</div></th>
+                                                                <th><div class="th-content">시작날짜 • 종료 날짜</div></th>
+                                                                <th><div class="th-content">Details</div></th>
+                                                                <th><div class="th-content">수정 • 삭제</div></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td> 
+                                                                    <div class="login-one-inputs check">
+                                                                        <input class="inp-cbx" id="cbx2" type="checkbox" style="display: none"/>
+                                                                        <label class="cbx" for="cbx2">
+                                                                            <span>
+                                                                                <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                Jim Carry
+                                                                </td>
+                                                                 <td>모집분야 <br>모집인원</td>
+                                                                <td>
+                                                                    <span >100</span>
+                                                                </td>
+                                                                <td>30.10.2016 <br> 04.04.2023</td>
+                                                                <td>
+                                                                    <a href="/company/detail" class="btn btn-sm btn-info">Details</a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex">
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary" title="Edit" data-original-title="Edit"><i class="las la-pen"></i></a>
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-danger ml-2" title="Delete" data-original-title="Delete"><i class="las la-trash"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 
+                                                                    <div class="login-one-inputs check">
+                                                                        <input class="inp-cbx" id="cbx3" type="checkbox" style="display: none"/>
+                                                                        <label class="cbx" for="cbx3">
+                                                                            <span>
+                                                                                <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    Justin Williamson
+                                                                </td>
+                                                                 <td>모집분야 <br>모집인원</td>
+                                                                <td>
+                                                                     <span >100</span>
+                                                                </td>
+                                                                <td>28.01.2016 <br> 04.04.2023</td>
+                                                                <td>
+                                                                    <a  class="btn btn-sm btn-info">Details</a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex">
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary" title="Edit" data-original-title="Edit"><i class="las la-pen"></i></a>
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-danger ml-2" title="Delete" data-original-title="Delete"><i class="las la-trash"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 
+                                                                    <div class="login-one-inputs check">
+                                                                        <input class="inp-cbx" id="cbx4" type="checkbox" style="display: none"/>
+                                                                        <label class="cbx" for="cbx4">
+                                                                            <span>
+                                                                                <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    Kane Pulock
+                                                                </td>
+                                                                 <td>모집분야 <br>모집인원</td>
+                                                                <td>
+                                                                     <span >100</span>
+                                                                </td>
+                                                                <td>14.05.2016 <br> 04.04.2023</td>
+                                                                <td>
+                                                                    <a  class="btn btn-sm btn-info">Details</a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex">
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary" title="Edit" data-original-title="Edit"><i class="las la-pen"></i></a>
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-danger ml-2" title="Delete" data-original-title="Delete"><i class="las la-trash"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 
+                                                                    <div class="login-one-inputs check">
+                                                                        <input class="inp-cbx" id="cbx5" type="checkbox" style="display: none"/>
+                                                                        <label class="cbx" for="cbx5">
+                                                                            <span>
+                                                                                <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    Cameron Jones
+                                                                </td>
+                                                                 <td>모집분야 <br>모집인원</td>
+                                                                <td>
+                                                                     <span >100</span>
+                                                                </td>
+                                                                <td>14.10.2017 <br> 04.04.2023</td>
+                                                                <td>
+                                                                    <a  class="btn btn-sm btn-info">Details</a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex">
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary" title="Edit" data-original-title="Edit"><i class="las la-pen"></i></a>
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-danger ml-2" title="Delete" data-original-title="Delete"><i class="las la-trash"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 
+                                                                    <div class="login-one-inputs check">
+                                                                        <input class="inp-cbx" id="cbx6" type="checkbox" style="display: none"/>
+                                                                        <label class="cbx" for="cbx6">
+                                                                            <span>
+                                                                                <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                Aaron Bancroft
+                                                                </td>
+                                                                <td>모집분야 <br>모집인원</td>
+                                                                <td>
+                                                                   <span >100</span>
+                                                                </td>
+                                                                <td>24.05.2019 <br> 04.04.2023</td>
+                                                                <td>
+                                                                    <a  class="btn btn-sm btn-info">Details</a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex">
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary" title="Edit" data-original-title="Edit"><i class="las la-pen"></i></a>
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-danger ml-2" title="Delete" data-original-title="Delete"><i class="las la-trash"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 
+                                                                    <div class="login-one-inputs check">
+                                                                        <input class="inp-cbx" id="cbx7" type="checkbox" style="display: none"/>
+                                                                        <label class="cbx" for="cbx7">
+                                                                            <span>
+                                                                                <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    Jilly Williams
+                                                                </td>
+                                                                 <td>모집분야 <br>모집인원</td>
+                                                                <td>
+                                                                    <span >100</span>
+                                                                </td>
+                                                                <td>15.01.2015 <br> 04.04.2023</td>
+                                                                <td>
+                                                                    <a  class="btn btn-sm btn-info">Details</a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex">
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary" title="Edit" data-original-title="Edit"><i class="las la-pen"></i></a>
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-danger ml-2" title="Delete" data-original-title="Delete"><i class="las la-trash"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 
+                                                                    <div class="login-one-inputs check">
+                                                                        <input class="inp-cbx" id="cbx8" type="checkbox" style="display: none"/>
+                                                                        <label class="cbx" for="cbx8">
+                                                                            <span>
+                                                                                <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    Daniel Johnson
+                                                                </td>
+                                                                 <td>모집분야 <br>모집인원</td>
+                                                                <td>
+                                                                    <span >100</span>
+                                                                </td>
+                                                                <td>15.08.2008 <br> 04.04.2023</td>
+                                                                <td>
+                                                                    <a  class="btn btn-sm btn-info">Details</a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex">
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary" title="Edit" data-original-title="Edit"><i class="las la-pen"></i></a>
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-danger ml-2" title="Delete" data-original-title="Delete"><i class="las la-trash"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 
+                                                                    <div class="login-one-inputs check">
+                                                                        <input class="inp-cbx" id="cbx9" type="checkbox" style="display: none"/>
+                                                                        <label class="cbx" for="cbx9">
+                                                                            <span>
+                                                                                <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    Jane Salah
+                                                                </td>
+                                                                 <td>모집분야 <br>모집인원</td>
+                                                                <td>
+                                                                    <span >100</span>
+                                                                </td>
+                                                                <td>18.01.2019 <br> 04.04.2023</td>
+                                                                <td>
+                                                                    <a  class="btn btn-sm btn-info">Details</a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex">
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary" title="Edit" data-original-title="Edit"><i class="las la-pen"></i></a>
+                                                                        <a href="javascript:void(0);" class="bs-tooltip font-20 text-danger ml-2" title="Delete" data-original-title="Delete"><i class="las la-trash"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                                 
+                                

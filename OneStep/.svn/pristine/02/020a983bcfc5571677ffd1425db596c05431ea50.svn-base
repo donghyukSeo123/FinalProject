@@ -1,0 +1,14 @@
+package kr.or.ddit.mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import kr.or.ddit.vo.MemberVO;
+
+@Mapper
+public interface MemMapper {
+
+	int join(MemberVO vo);
+
+	int companyJoin(MemberVO vo);
+
+}
